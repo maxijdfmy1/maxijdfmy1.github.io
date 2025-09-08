@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores de Chile - Comida Típica y Rápida</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo"><img src="imagenes/logo.png" alt="50" width="75" height="75"> </div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#" id="navCartButton">🛒 Carrito (<span id="navCartCount">0</span>)</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+            </ul>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <div class="cart-button" id="cartButton">
+    🛒 <span id="cartCount">0</span>
+</div>
+
+    <section id="home" class="hero">
+    <!-- Carrusel de imágenes de fondo -->
+    <div class="hero-carousel">
+        <div class="carousel-slide active" style="background-image: url('imagenes/norte1.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('imagenes/norte2.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('imagenes/norte3.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('imagenes/costanera.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('imagenes/valparaiso.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('imagenes/cordillera.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('imagenes/rapanui.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('imagenes/villarrica.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('imagenes/palafitos.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('imagenes/torresdelpaine.jpg')"></div>
+        
+
+    </div>
+    
+    <div class="hero-content">
+        <div style="font-size: 6rem; margin-bottom: 1rem;"></div>
+        <img src="imagenes/logo sin texcto (1).png" lt="50" width="200" height="200">
+        <h1>Sabores Auténticos de Chile</h1>
+        <p>Sabores Auténticos de Chile a un clic: platos típicos preparados al momento y opciones de comida rápida con espíritu criollo. </p>
+    </div>
+</section>
+
+    <section id="menu" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestro Menú</h2>
+            
+            <div class="category-tabs">
+                <button class="tab-button active" data-category="tipica">Comida Típica</button>
+                <button class="tab-button" data-category="rapida">Comida Rápida</button>
+                <button class="tab-button" data-category="bebidas">Bebidas</button>
+            </div>
+
+            <!-- Comida Típica -->
+            <div id="tipica" class="category-content active">
+    <div class="food-grid">
+        <div class="food-card fade-in" 
+             data-name="Empanadas de Pino" 
+             data-price="2500" 
+             data-description="Masa crujiente rellena de carne, cebolla, huevo y aceituna; la clásica dieciochera."
+             data-image="🥟">
+            <div class="food-image"><img src="imagenes/empanadaspino.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Empanadas de Pino</h3>
+                <p class="food-description">Masa crujiente rellena de carne, cebolla, huevo y aceituna; la clásica dieciochera.</p>
+                <p class="food-price">$2.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Cazuela de Vacuno" 
+             data-price="8500" 
+             data-description="Caldo casero con posta, zapallo, papa, choclo y arroz. Perfecta para días fríos."
+             data-image="🍲">
+            <div class="food-image"><img src="imagenes/cazuela_de_vacuno.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Cazuela de Vacuno</h3>
+                <p class="food-description">Caldo casero con posta, zapallo, papa, choclo y arroz. Perfecta para días fríos.</p>
+                <p class="food-price">$8.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Cazuela de Pollo" 
+             data-price="8500" 
+             data-description="Versión liviana con pollo, verduras de estación y cilantro fresco."
+             data-image="🍗">
+            <div class="food-image"><img src="imagenes/cazuelapollo.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Cazuela de Pollo</h3>
+                <p class="food-description">Versión liviana con pollo, verduras de estación y cilantro fresco.</p>
+                <p class="food-price">$8.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+        
+        <div class="food-card fade-in" 
+             data-name="Carbonada" 
+             data-price="8500" 
+             data-description="Caldito ligero con papas, arvejas, zanahoria y trocitos de carne."
+             data-image="🥕">
+            <div class="food-image"><img src="imagenes/carbonadachilena.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Carbonada</h3>
+                <p class="food-description">Caldito ligero con papas, arvejas, zanahoria y trocitos de carne.</p>
+                <p class="food-price">$8.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Lomo a lo Pobre" 
+             data-price="11000" 
+             data-description="Filete jugoso con papas fritas, cebolla caramelizada y huevos; clásico de picada."
+             data-image="🥩">
+            <div class="food-image"><img src="imagenes/lomopobre.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Lomo a lo Pobre</h3>
+                <p class="food-description">Filete jugoso con papas fritas, cebolla caramelizada y huevos; clásico de picada.</p>
+                <p class="food-price">$11.000</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+        
+        <div class="food-card fade-in" 
+             data-name="Asado a la Parrilla" 
+             data-price="12000" 
+             data-description="Carnes selectas a la parrilla con pebre casero y ensalada chilena. Una experiencia gastronómica única."
+             data-image="🔥">
+            <div class="food-image"><img src="imagenes/parrilla.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Asado a la Parrilla</h3>
+                <p class="food-description">Carnes selectas a la parrilla con pebre casero y ensalada chilena. Una experiencia gastronómica única.</p>
+                <p class="food-price">$12.000</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Pollo Arvejado" 
+             data-price="10000" 
+             data-description="Trutro en salsa de arvejas y zanahoria con toque de vino blanco."
+             data-image="🐔">
+            <div class="food-image"><img src="imagenes/polloarvejado.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Pollo Arvejado</h3>
+                <p class="food-description">Trutro en salsa de arvejas y zanahoria con toque de vino blanco.</p>
+                <p class="food-price">$10.000</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Porotos Granados" 
+             data-price="8600" 
+             data-description="Porotos cocidos con mazamorra o alternativamente pilco, cebolla, zapallo, tomate y ajo. Sabor a casa de campo."
+             data-image="🫘">
+            <div class="food-image"><img src="imagenes/PorotosGranados.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Porotos Granados</h3>
+                <p class="food-description">Porotos cocidos con mazamorra o alternativamente pilco, cebolla, zapallo, tomate y ajo. Sabor a casa de campo.</p>
+                <p class="food-price">$8.600</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Porotos con Riendas" 
+             data-price="8600" 
+             data-description="Porotos con tallarines, longaniza y zapallo; plato chileno bien contundente."
+             data-image="🍝">
+            <div class="food-image"><img src="imagenes/porotosconriendas.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Porotos con Riendas</h3>
+                <p class="food-description">Porotos con tallarines, longaniza y zapallo; plato chileno bien contundente.</p>
+                <p class="food-price">$8.600</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Humitas" 
+             data-price="6500" 
+             data-description="Pasta de choclo con albahaca envuelta en hojas y cocida al vapor; veraniega y suave. (veg)"
+             data-image="🌽">
+            <div class="food-image"><img src="imagenes/Humitaschilena.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Humitas</h3>
+                <p class="food-description">Pasta de choclo con albahaca envuelta en hojas y cocida al vapor; veraniega y suave. (veg)</p>
+                <p class="food-price">$6.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Pastel de Choclo" 
+             data-price="9500" 
+             data-description="Pastel cremoso de choclo molido sobre pino de carne y pollo, horneado doradito"
+             data-image="🥧">
+            <div class="food-image"><img src="imagenes/PastelChoclo.jpg" alt="" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Pastel de Choclo</h3>
+                <p class="food-description">Pastel cremoso de choclo molido sobre pino de carne y pollo, horneado doradito</p>
+                <p class="food-price">$9.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Paila Marina" 
+             data-price="9500" 
+             data-description="Exquisita sopa de mariscos frescos del Pacífico con un toque de vino blanco y cilantro."
+             data-image="🦐">
+            <div class="food-image"><img src="imagenes/PailaMarina.jpg" alt="" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Paila Marina</h3>
+                <p class="food-description">Exquisita sopa de mariscos frescos del Pacífico con un toque de vino blanco y cilantro.</p>
+                <p class="food-price">$9.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Comida Rápida -->
+<div id="rapida" class="category-content">
+    <div class="food-grid">
+        <div class="food-card fade-in" 
+             data-name="Completo Italiano" 
+             data-price="3500" 
+             data-description="Pan, vienesa, palta, tomate y mayo; equilibrio perfecto y siempre fresco."
+             data-image="🌭">
+            <div class="food-image"><img src="imagenes/completoitaliano.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Completo Italiano</h3>
+                <p class="food-description">Pan, vienesa, palta, tomate y mayo; equilibrio perfecto y siempre fresco.</p>
+                <p class="food-price">$3.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Completo Dinámico" 
+             data-price="3500" 
+             data-description="Versión generosa con chucrut, tomate, palta y salsas; para buen diente."
+             data-image="🌯">
+            <div class="food-image"><img src="imagenes/completodinamico.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Completo Dinámico</h3>
+                <p class="food-description">Versión generosa con chucrut, tomate, palta y salsas; para buen diente.</p>
+                <p class="food-price">$3.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Barros Luco" 
+             data-price="8500" 
+             data-description="Bistec a la plancha con queso fundido en pan caliente."
+             data-image="🥪">
+            <div class="food-image"><img src="imagenes/barrosluco.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Barros Luco</h3>
+                <p class="food-description">Bistec a la plancha con queso fundido en pan caliente.</p>
+                <p class="food-price">$8.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Churrasco Italiano" 
+             data-price="9100" 
+             data-description="Lomo laminado en plancha con palta, tomate y mayo en marraqueta."
+             data-image="🥙">
+            <div class="food-image"><img src="imagenes/churrasco-italiano.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Churrasco Italiano</h3>
+                <p class="food-description">Lomo laminado en plancha con palta, tomate y mayo en marraqueta.</p>
+                <p class="food-price">$9.100</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Churrasco Chacarero" 
+             data-price="9100" 
+             data-description="Churrasco con porotos verdes, rodajas de ají verde y tomate; crocante y picantito."
+             data-image="🌶️">
+            <div class="food-image"><img src="imagenes/chacarero.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Churrasco Chacarero</h3>
+                <p class="food-description">Churrasco con porotos verdes, rodajas de ají verde y tomate; crocante y picantito.</p>
+                <p class="food-price">$9.100</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Marraqueta Ave Palta" 
+             data-price="6300" 
+             data-description="Pechuga deshilachada con palta y mayo; liviano y sabroso."
+             data-image="🥑">
+            <div class="food-image"><img src="imagenes/avepalta.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Marraqueta Ave Palta</h3>
+                <p class="food-description">Pechuga deshilachada con palta y mayo; liviano y sabroso.</p>
+                <p class="food-price">$6.300</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Sánguche de potito" 
+             data-price="6300" 
+             data-description="Guiso de guata bien sazonado en pan; clásico de estadio."
+             data-image="🥪">
+            <div class="food-image"><img src="imagenes/sanguchedepotito.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Sánguche de potito</h3>
+                <p class="food-description">Guiso de guata bien sazonado en pan; clásico de estadio.</p>
+                <p class="food-price">$6.300</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Choripán" 
+             data-price="4100" 
+             data-description="Chorizo a la plancha en marraqueta con pebre; ideal para asados"
+             data-image="🌭">
+            <div class="food-image"><img src="imagenes/choripanchileno.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Choripán</h3>
+                <p class="food-description">Chorizo a la plancha en marraqueta con pebre; ideal para asados</p>
+                <p class="food-price">$4.100</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Sopaipillas" 
+             data-price="2100" 
+             data-description="Crujientes sopaipillas recién hechas, perfectas con pebre o chancaca. Ideal para la once."
+             data-image="🫓">
+            <div class="food-image"><img src="imagenes/sopaipillas-chilenas_web.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Sopaipillas</h3>
+                <p class="food-description">Crujientes sopaipillas recién hechas, perfectas con pebre o chancaca. Ideal para la once.</p>
+                <p class="food-price">$2.100</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Salchipapas" 
+             data-price="3500" 
+             data-description="Papas fritas con salchicha y salsas de la casa."
+             data-image="🍟">
+            <div class="food-image"><img src="imagenes/salchipapa.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Salchipapas</h3>
+                <p class="food-description">Papas fritas con salchicha y salsas de la casa.</p>
+                <p class="food-price">$3.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Chorrillana" 
+             data-price="12500" 
+             data-description="Papas fritas con tiras de carne, cebolla y huevos; para compartir."
+             data-image="🍳">
+            <div class="food-image"><img src="imagenes/chorrillana.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Chorrillana</h3>
+                <p class="food-description">Papas fritas con tiras de carne, cebolla y huevos; para compartir.</p>
+                <p class="food-price">$12.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bebidas -->
+<div id="bebidas" class="category-content">
+    <div class="food-grid">
+        <div class="food-card fade-in" 
+             data-name="Mote con huesillos" 
+             data-price="3500" 
+             data-description="Refresco de trigo mote y durazno seco en jugo de chancaca, servido bien frío."
+             data-image="🥤">
+            <div class="food-image"><img src="imagenes/motehuesillo.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Mote con huesillos</h3>
+                <p class="food-description">Refresco de trigo mote y durazno seco en jugo de chancaca, servido bien frío.</p>
+                <p class="food-price">$3.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Terremoto" 
+             data-price="3500" 
+             data-description="Pipeño con helado de piña y toque de granadina; dulce y potente."
+             data-image="🍹">
+            <div class="food-image"><img src="imagenes/terremoto.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Terremoto</h3>
+                <p class="food-description">Pipeño con helado de piña y toque de granadina; dulce y potente.</p>
+                <p class="food-price">$3.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Pisco Sour" 
+             data-price="3500" 
+             data-description="Pisco, limón, azúcar y clara de huevo batidos a la perfección."
+             data-image="🍸">
+            <div class="food-image"><img src="imagenes/PISCOSOUR.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Pisco Sour</h3>
+                <p class="food-description">Pisco, limón, azúcar y clara de huevo batidos a la perfección.</p>
+                <p class="food-price">$3.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+
+                    </div>
+
+        <div class="food-card fade-in" 
+             data-name="Navegado" 
+             data-price="3500" 
+             data-description="Vino tinto caliente con naranja y especias; ideal para el invierno."
+             data-image="🍷">
+            <div class="food-image"><img src="imagenes/Navegado.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Navegado</h3>
+                <p class="food-description">Vino tinto caliente con naranja y especias; ideal para el invierno.</p>
+                <p class="food-price">$3.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="BAltica" 
+             data-price="2000" 
+             data-description="Lager chilena, dorada y muy refrescante, de sabor suave y final limpio"
+             data-image="🍺">
+            <div class="food-image"><img src="imagenes/baltica.png" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Baltica</h3>
+                <p class="food-description">Lager chilena, dorada y muy refrescante, de sabor suave y final limpio.</p>
+                <p class="food-price">$2.000</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Bebida" 
+             data-price="1500" 
+             data-description="Cerveza artesanal chilena con ocho maltas y cinco lúpulos, madurada en roble americano. Presenta notas de avellanas, toffee, vainilla y caramelo"
+             data-image="🍺">
+            <div class="food-image"><img src="imagenes/bebida.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Bebidas</h3>
+                <p class="food-description">Bebidas gaseosas heladas</p>
+                <p class="food-price">$1.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Cervezas artesanal Austral Calafate" 
+             data-price="3500" 
+             data-description="Cerveza chilena de estilo Ale, originaria de la Patagonia, con un color ámbar oscuro y un 5% de alcohol. Ofrece un equilibrio entre amargor y dulzor."
+             data-image="🍻">
+            <div class="food-image"><img src="imagenes/australcalafate.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Cervezas artesanal Austral Calafate</h3>
+                <p class="food-description">Cerveza chilena de estilo Ale, originaria de la Patagonia, con un color ámbar oscuro y un 5% de alcohol. Ofrece un equilibrio entre amargor y dulzor.</p>
+                <p class="food-price">$3.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Piscola" 
+             data-price="8100" 
+             data-description="Pisco con bebida cola y hielo; el favorito de los carretes."
+             data-image="🥃">
+            <div class="food-image"><img src="imagenes/piscola.png" alt="" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Piscola</h3>
+                <p class="food-description">Pisco con bebida cola y hielo; el favorito de los carretes.</p>
+                <p class="food-price">$8.100</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Vino Tinto Carmenere" 
+             data-price="8100" 
+             data-description="Ofrece notas aromáticas de ciruela, pimienta, chocolate amargo y especias en nariz, y un sabor frutal, con taninos suaves y un final largo y elegante en boca."
+             data-image="🍷">
+            <div class="food-image"><img src="imagenes/CARMENERE.jpg" alt="" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Vino Tinto Carmenere</h3>
+                <p class="food-description">Ofrece notas aromáticas de ciruela, pimienta, chocolate amargo y especias en nariz, y un sabor frutal, con taninos suaves y un final largo y elegante en boca.</p>
+                <p class="food-price">$8.100</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+
+        <div class="food-card fade-in" 
+             data-name="Cola de mono" 
+             data-price="3500" 
+             data-description="Trago cremoso de Navidad con aguardiente, café, leche y canela."
+             data-image="☕">
+            <div class="food-image"><img src="imagenes/colademono.jpg" width="400" height="300"></div>
+            <div class="food-info">
+                <h3 class="food-name">Cola de mono</h3>
+                <p class="food-description">Trago cremoso de Navidad con aguardiente, café, leche y canela.</p>
+                <p class="food-price">$3.500</p>
+                <div class="quantity-controls-card">
+                    <button class="qty-btn-card" data-action="decrease">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="qty-btn-card" data-action="increase">+</button>
+                </div>
+                <button class="add-to-cart-direct">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📍 Av. Providencia 1234, Santiago</p>
+                    <p>📞 +56 2 2345 6789</p>
+                    <p>✉️ info@saboresdelhogar.cl</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <p>Lunes a Viernes: 11:00 - 23:00</p>
+                    <p>Sábados: 12:00 - 24:00</p>
+                    <p>Domingos: 12:00 - 22:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">Twitter</a></p>
+                </div>
+            </div>
+            <p>&copy; 2025 Sabores de Hogar. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

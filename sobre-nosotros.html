@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - Sabores de Chile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo"><img src="imagenes/logo.png" alt="50" width="75" height="75"> </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#menu">Menú</a></li>
+                <li><a href="#" id="navCartButton">🛒 Carrito (<span id="navCartCount">0</span>)</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sobre-nosotros.html" class="active">Sobre Nosotros</a></li>
+            </ul>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <div class="cart-button" id="cartButton">
+        🛒 <span id="cartCount">0</span>
+    </div>
+
+    <section class="hero-small">
+        <div class="hero-content">
+            <h1>Nuestra Historia</h1>
+            <p>Sabores auténticos de Chile desde 1995</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>¿Quiénes Somos?</h2>
+                    <p>Somos una familia chilena dedicada a preservar y compartir los sabores tradicionales de nuestro país. Desde hace más de 3 años, hemos trabajado con pasión para ofrecer platos auténticos que representen la rica gastronomía chilena.</p>
+                    
+                    <p>Nuestro restaurante nació del sueño de Maximiliano, quien llegó desde el sur de Chile con sus recetas familiares y la determinación de mostrar al mundo los verdaderos sabores de nuestra tierra.</p>
+
+                    <h3>Nuestra Misión</h3>
+                    <p>Preservar y difundir la tradición culinaria chilena, ofreciendo platos preparados con ingredientes frescos y técnicas tradicionales, manteniendo viva la herencia gastronómica de nuestros ancestros.</p>
+
+                    <h3>Nuestros Valores</h3>
+                    <ul class="values-list">
+                        <li><strong>Tradición:</strong> Respetamos las recetas originales transmitidas de generación en generación</li>
+                        <li><strong>Calidad:</strong> Seleccionamos cuidadosamente cada ingrediente</li>
+                        <li><strong>Autenticidad:</strong> Cada plato refleja el verdadero sabor chileno</li>
+                        <li><strong>Familia:</strong> Tratamos a cada cliente como parte de nuestra familia</li>
+                    </ul>
+                </div>
+                
+                <div class="about-video">
+                    <h3>Conoce Nuestro Proceso</h3>
+                    <video autoplay muted loop controls width="100%">
+                        <source src="videos/sobrenosotrosvideo.mov" type="video/mp4">
+                    </video>
+                    <p class="video-caption">Mira cómo preparamos nuestros platos tradicionales con amor y dedicación.</p>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h2>Nuestro Equipo</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="imagenes/chef-maria.jpg" alt=" Fundadores" width="200" height="200">
+                        <h4>Maximiliano Diaz y Sebastian Robles</h4>
+                        <p>Fundadores </p>
+                        <p>"Cada plato lleva el amor de generaciones"</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="imagenes/chef-carlos.jpg" alt="Carlos - Sous Chef" width="200" height="200">
+                        <h4>Carlos González</h4>
+                        <p>Sous Chef</p>
+                        <p>"Innovamos respetando la tradición"</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="imagenes/chef-ana.jpg" alt="Ana - Chef de Postres" width="200" height="200">
+                        <h4>Ana Morales</h4>
+                        <p>Chef de Repostería</p>
+                        <p>"Los dulces chilenos tienen historia"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📍 Av. Providencia 1234, Santiago</p>
+                    <p>📞 +56 2 2345 6789</p>
+                    <p>✉️ info@saboresdelhogar.cl</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <p>Lunes a Viernes: 11:00 - 23:00</p>
+                    <p>Sábados: 12:00 - 24:00</p>
+                    <p>Domingos: 12:00 - 22:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">Twitter</a></p>
+                </div>
+            </div>
+            <p>&copy; 2025 Sabores de Chile. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

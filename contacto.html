@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Sabores de Chile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo"><img src="imagenes/logo.png" alt="50" width="75" height="75"> </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#menu">Menú</a></li>
+                <li><a href="#" id="navCartButton">🛒 Carrito (<span id="navCartCount">0</span>)</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+            </ul>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <div class="cart-button" id="cartButton">
+        🛒 <span id="cartCount">0</span>
+    </div>
+
+    <section class="hero-small">
+        <div class="hero-content">
+            <h1>Contacto</h1>
+            <p>Estamos aquí para atenderte</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Información de Contacto</h2>
+                    <div class="contact-item">
+                        <h3>📍 Dirección</h3>
+                        <p>Av. Providencia 1234, Santiago<br>
+                        Metro Providencia (Línea 1)</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>📞 Teléfonos</h3>
+                        <p>Principal: +56 2 2345 6789<br>
+                        WhatsApp: +56 9 8765 4321<br>
+                        Delivery: +56 2 2345 6790</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>⏰ Horarios de Atención</h3>
+                        <p>Lunes a Viernes: 11:00 - 23:00<br>
+                        Sábados: 12:00 - 24:00<br>
+                        Domingos: 12:00 - 22:00</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p>General: info@saboresdelhogar.cl<br>
+                        Pedidos: pedidos@saboresdelhogar.cl<br>
+                        Sugerencias: sugerencias@saboresdelhogar.cl</p>
+                    </div>
+
+                    <div class="social-media">
+                        <h3>🌐 Síguenos</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">Facebook</a>
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">Twitter</a>
+                            <a href="#" class="social-link">TikTok</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-forms">
+                    <!-- Formulario de Contacto General -->
+                    <div class="form-container">
+                        <h2>Envíanos un Mensaje</h2>
+                        <form id="contactForm" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo *</label>
+                                <input type="text" id="nombre" name="nombre" required autocomplete="name">
+                                <span class="error-message" id="nombre-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico *</label>
+                                <input type="email" id="email" name="email" required autocomplete="email" 
+                                       placeholder="ejemplo@correo.com">
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" autocomplete="tel" 
+                                       placeholder="+56 9 1234 5678" pattern="^\+56\s[0-9]\s[0-9]{4}\s[0-9]{4}$">
+                                <span class="error-message" id="telefono-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="asunto">Asunto *</label>
+                                <select id="asunto" name="asunto" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="consulta">Consulta General</option>
+                                    <option value="pedido">Problema con Pedido</option>
+                                    <option value="sugerencia">Sugerencia</option>
+                                    <option value="felicitacion">Felicitación</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <span class="error-message" id="asunto-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje *</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" required 
+                                          placeholder="Escribe tu mensaje aquí..." minlength="10" maxlength="500"></textarea>
+                                <span class="char-counter">0/500 caracteres</span>
+                                <span class="error-message" id="mensaje-error"></span>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Quiero recibir promociones y novedades por email
+                                </label>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Opiniones y Sugerencias -->
+                    <div class="form-container">
+                        <h2>Tu Opinión nos Importa</h2>
+                        <p class="form-description">Cuéntanos tu experiencia y ayúdanos a mejorar nuestro servicio</p>
+                        
+                        <form id="opinionForm" class="opinion-form" novalidate>
+                            <div class="form-group">
+                                <label for="nombreOpinion">Tu Nombre *</label>
+                                <input type="text" id="nombreOpinion" name="nombreOpinion" required autocomplete="name">
+                                <span class="error-message" id="nombreOpinion-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailOpinion">Email *</label>
+                                <input type="email" id="emailOpinion" name="emailOpinion" required autocomplete="email">
+                                <span class="error-message" id="emailOpinion-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="calificacion">Califica nuestro servicio *</label>
+                                <div class="rating-container">
+                                    <div class="stars" id="rating">
+                                        <span class="star" data-rating="1">⭐</span>
+                                        <span class="star" data-rating="2">⭐</span>
+                                        <span class="star" data-rating="3">⭐</span>
+                                        <span class="star" data-rating="4">⭐</span>
+                                        <span class="star" data-rating="5">⭐</span>
+                                    </div>
+                                    <input type="hidden" id="calificacion" name="calificacion" required>
+                                    <span class="rating-text">Selecciona una calificación</span>
+                                </div>
+                                <span class="error-message" id="calificacion-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="platoFavorito">¿Cuál es tu plato favorito de nuestro menú?</label>
+                                <input type="text" id="platoFavorito" name="platoFavorito" 
+                                       placeholder="Ej: Cazuela de vacuno, Empanadas de pino...">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sugerenciaPlato">¿Qué plato te gustaría que agregáramos al menú?</label>
+                                <input type="text" id="sugerenciaPlato" name="sugerenciaPlato" 
+                                       placeholder="Sugiere un plato típico chileno">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="experienciaDelivery">¿Cómo llegó tu pedido a domicilio?</label>
+                                <select id="experienciaDelivery" name="experienciaDelivery">
+                                    <option value="">No he pedido delivery</option>
+                                    <option value="excelente">Excelente - Caliente y a tiempo</option>
+                                    <option value="bueno">Bueno - Llegó bien pero un poco tarde</option>
+                                    <option value="regular">Regular - Llegó tibio</option>
+                                    <option value="malo">Malo - Llegó frío o muy tarde</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="comentarios">Comentarios adicionales</label>
+                                <textarea id="comentarios" name="comentarios" rows="4" 
+                                          placeholder="Cuéntanos más sobre tu experiencia, sugerencias de mejora, etc."></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="publicarTestimonio" name="publicarTestimonio">
+                                    <span class="checkmark"></span>
+                                    Autorizo publicar mi opinión como testimonio (solo nombre y comentario)
+                                </label>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Enviar Opinión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa (simulado) -->
+            <div class="map-container">
+                <h2>Encuéntranos</h2>
+                <div class="map-placeholder">
+                    <p>📍 Av. Providencia 1234, Santiago</p>
+                    <p>Metro Providencia (Línea 1) - 2 cuadras</p>
+                    <p>Estacionamiento disponible en horario comercial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📍 Av. Providencia 1234, Santiago</p>
+                    <p>📞 +56 2 2345 6789</p>
+                    <p>✉️ info@saboresdelhogar.cl</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <p>Lunes a Viernes: 11:00 - 23:00</p>
+                    <p>Sábados: 12:00 - 24:00</p>
+                    <p>Domingos: 12:00 - 22:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <p><a href="#">Facebook</a></p>
+                    <p><a href="#">Instagram</a></p>
+                    <p><a href="#">Twitter</a></p>
+                </div>
+            </div>
+            <p>&copy; 2025 Sabores de Chile. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="formularios.js"></script>
+</body>
+</html>

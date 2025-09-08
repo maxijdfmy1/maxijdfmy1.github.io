@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Sabores de Chile</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #c41e3a;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .item-info {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .item-price {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 20px;
+        }
+        
+        .qty-btn {
+            background: #c41e3a;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .total-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #c41e3a;
+        }
+        
+        .total-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .total-final {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #c41e3a;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #c41e3a, #ff6b6b);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            margin: 50px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="window.close()">← Volver al Menú</button>
+        <h1>🛒 Tu Carrito de Compras</h1>
+        
+        <div id="cartItems"></div>
+        
+        <div id="totalSection" class="total-section" style="display: none;">
+            <div class="total-line">
+                <span>Subtotal:</span>
+                <span id="subtotal">$0</span>
+            </div>
+            <div class="total-line">
+                <span>IVA (19%):</span>
+                <span id="iva">$0</span>
+            </div>
+            <div class="total-line total-final">
+                <span>Total:</span>
+                <span id="total">$0</span>
+            </div>
+            
+            <button class="checkout-btn" onclick="checkout()">
+                Proceder al Pago 💳
+            </button>
+        </div>
+        
+        <div id="emptyCart" class="empty-cart">
+            Tu carrito está vacío 😔<br>
+            <small>Regresa al menú para agregar productos</small>
+        </div>
+    </div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const IVA_RATE = 0.19;
+
+        function renderCart() {
+            const cartItems = document.getElementById('cartItems');
+            const totalSection = document.getElementById('totalSection');
+            const emptyCart = document.getElementById('emptyCart');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '';
+                totalSection.style.display = 'none';
+                emptyCart.style.display = 'block';
+                return;
+            }
+            
+            emptyCart.style.display = 'none';
+            totalSection.style.display = 'block';
+            
+            cartItems.innerHTML = cart.map((item, index) => `
+                <div class="cart-item">
+                    <div class="item-info">
+                        <div class="item-name">${item.image} ${item.name}</div>
+                        <div class="item-price">$${parseInt(item.price).toLocaleString('es-CL')} c/u</div>
+                    </div>
+                    
+                    <div class="quantity-controls">
+                        <button class="qty-btn" onclick="changeQuantity(${index}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="qty-btn" onclick="changeQuantity(${index}, 1)">+</button>
+                    </div>
+                    
+                    <div style="font-weight: bold;">
+                        $${(parseInt(item.price) * item.quantity).toLocaleString('es-CL')}
+                    </div>
+                    
+                    <button class="remove-btn" onclick="removeItem(${index})">🗑️</button>
+                </div>
+            `).join('');
+            
+            calculateTotal();
+        }
+
+        function changeQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function calculateTotal() {
+            const subtotal = cart.reduce((sum, item) => sum + (parseInt(item.price) * item.quantity), 0);
+            const iva = Math.round(subtotal * IVA_RATE);
+            const total = subtotal + iva;
+            
+            document.getElementById('subtotal').textContent = `$${subtotal.toLocaleString('es-CL')}`;
+            document.getElementById('iva').textContent = `$${iva.toLocaleString('es-CL')}`;
+            document.getElementById('total').textContent = `$${total.toLocaleString('es-CL')}`;
+        }
+
+        function checkout() {
+            alert('¡Funcionalidad de pago en desarrollo! 🚧\n\nTotal a pagar: ' + document.getElementById('total').textContent);
+        }
+
+        renderCart();
+    </script>
+</body>
+</html>
